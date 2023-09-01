@@ -1,0 +1,14 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "Memory Game",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./input.css -o ./assets/styles.css --watch",
+    "build": "npx tailwindcss -i ./input.css -o ./assets/styles.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3"
+  }
+}

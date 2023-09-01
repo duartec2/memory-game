@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Memory Game</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="assets/styles.css" rel="stylesheet"/>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="assets/app.js"></script>
+</head>
+<body x-data="app" x-init="start()">
+<h1 class="text-center">Memory Game</h1>
+<main id="game">
+    <div class="w-full grid grid-cols-3 sm:grid-cols-4 xl:grid-cols-6 gap-5 items-center justify-center">
+        <template x-for="(card, index) in cards">
+            <div class="self-center">
+                <div class="card" @click="flip($el)" :id="'card-' + index" :data-card="card">
+                    <div class="card-back">
+                        <img src="assets/cards/back.svg" alt="">
+                    </div>
+                    <div class="card-front">
+                        <img :src="'assets/cards/' + card + '.svg'" alt="">
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</main>
+</body>
+</html>

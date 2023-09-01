@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    body {
+        @apply bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-gray-300 mx-auto w-full px-6 py-12;
+    }
+
+    main {
+        @apply max-w-screen-2xl mx-auto
+    }
+    p {
+        @apply pb-4;
+    }
+
+    h1 {
+        @apply font-light text-5xl pb-20 dark:text-white text-gray-950;
+    }
+
+    h2 {
+        @apply font-light text-3xl pb-4 dark:text-white text-gray-950;
+    }
+
+    [x-cloak] {
+        display: none !important;
+    }
+}
+
+@layer utilities {
+    .card {
+        @apply relative w-28 h-28 md:w-32 md:h-32 lg:w-44 lg:h-44 cursor-pointer mx-auto rounded-xl transition duration-500 ease-out shadow-lg;
+        transform-style: preserve-3d;
+    }
+
+    .card img {
+        @apply object-scale-down w-28 h-28 md:w-32 md:h-32 lg:w-44 lg:h-44 p-6;
+    }
+
+    .card.flipped, .card.match {
+        transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+        @apply absolute top-0 left-0 w-full h-full bg-white rounded-xl border border-gray-300;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+
+    .card-front {
+        transform: rotateY(180deg);
+    }
+}
